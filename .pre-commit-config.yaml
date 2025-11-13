@@ -1,0 +1,9 @@
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.28.0
+    hooks:
+      - id: gitleaks
+        name: gitleaks (staged only)
+        entry: gitleaks protect
+        args: ["--staged", "--verbose", "--redact"]
+        pass_filenames: false
