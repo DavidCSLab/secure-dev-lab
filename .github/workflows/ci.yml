@@ -67,7 +67,7 @@ jobs:
       - name: Run Trivy image scan
         uses: aquasecurity/trivy-action@0.24.0
         with:
-          input: /tmp/juice-shop-image.tar
+          input: /tmp/juice-shop-image/juice-shop-image.tar
           vuln-type: 'os,library'
           format: 'table'
           exit-code: '0'
