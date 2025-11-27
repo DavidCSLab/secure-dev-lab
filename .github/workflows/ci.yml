@@ -61,7 +61,7 @@ jobs:
           path: '.'
           format: 'HTML'
           out: 'reports'
-          args: '--disableYarnAudit --exclude "/test/files/"'
+          args: '--disableYarnAudit --exclude "**/test/files/**"'
 
       - name: Upload SCA Report
         uses: actions/upload-artifact@v4
