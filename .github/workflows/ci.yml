@@ -83,6 +83,3 @@ jobs:
         uses: crazy-max/ghaction-container-scan@v3
         with:
           tarball: /tmp/juice-shop-image.tar
-
-
-
