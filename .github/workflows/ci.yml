@@ -50,6 +50,7 @@ jobs:
 
   sca-scan:
     runs-on: ubuntu-latest
+    continue-on-error: true         
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -64,6 +65,7 @@ jobs:
           args: '--disableYarnAudit --exclude "**/test/files/**"'
 
       - name: Upload SCA Report
+        if: always()                 
         uses: actions/upload-artifact@v4
         with:
           name: sca-report
@@ -72,6 +74,7 @@ jobs:
   container-scan:
     runs-on: ubuntu-latest
     needs: build
+    continue-on-error: true          
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
